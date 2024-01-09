@@ -38,7 +38,7 @@
                             admin obj = (admin) (request.getAttribute("adminData"));
                         %>
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-4 text-gray-800">Welcome <%= obj.getId()%></h1>
+                        <h1 class="h3 mb-4 text-gray-800">Welcome, <%= obj.getId()%></h1>
 
                         <!-- Display other resident information as needed -->
 
