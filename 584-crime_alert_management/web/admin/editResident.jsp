@@ -35,22 +35,22 @@
 
                         <!-- Page Heading -->
                         <h1 class="h3 mb-4 text-gray-800">Crime Edit</h1>
-                        <form class="user" action="eResidentController.do" method="POST">
+                        <form class="user" action="eResident.do" method="POST">
                             <div class="form-group">
                                 <label for="Crime ID">ID:</label>
-                                <input type="text" class="form-control form-control-user" id="residentId" name="ic" value="<%= obj.getId()%>" readonly>
+                                <input type="text" class="form-control form-control-user" id="residentId" name="id" value="<%= obj.getId()%>" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="crimeName">IC:</label>
-                                <input type="text" class="form-control form-control-user" id="crimeName" name="id" placeholder="Crime Name" value="<%= obj.getIc()%>">
+                                <input type="text" class="form-control form-control-user" id="crimeName" name="ic" value="<%= obj.getIc()%>">
                             </div>
                             <div class="form-group">
                                 <label for="residentId">Name:</label>
-                                <input type="text" class="form-control form-control-user" id="residentId" name="Name" value="<%= obj.getName()%>" readonly>
+                                <input type="text" class="form-control form-control-user" id="residentId" name="Name" value="<%= obj.getName()%>">
                             </div>
                             <div class="form-group">
                                 <label for="residentId">Phone:</label>
-                                <input type="text" class="form-control form-control-user" id="residentId" name="Phone" value="<%= obj.getPhone()%>" readonly>
+                                <input type="text" class="form-control form-control-user" id="residentId" name="Phone" value="<%= obj.getPhone()%>">
                             </div>
                             <div class="form-group">
                                 <label for="residentId">Password:</label>

@@ -60,7 +60,6 @@ public class userDataDao {
                 e.printStackTrace();
             }
         }
-        
 
         return foundResident;
     }
@@ -82,7 +81,6 @@ public class userDataDao {
                 resident foundResident = new resident(); // Create a new Resident object for each record
 
                 // Assuming you have a CrimeRecord class and an instance variable crimeRecord in the Resident class
-
                 foundResident.setIc(resultSet.getString("IC"));
                 foundResident.setName(resultSet.getString("NAME"));
                 foundResident.setPhone(resultSet.getString("PHONE"));
@@ -90,7 +88,6 @@ public class userDataDao {
                 foundResident.setId(id);
 
                 // Add crime record to the resident
-
                 // Add the populated resident to the list
                 allResidents.add(foundResident);
             }
@@ -114,6 +111,48 @@ public class userDataDao {
         }
 
         return allResidents;
+    }
+
+    public boolean deletePlace(int id) {
+        boolean success = false;
+        try (Connection connection = DBConnection.createConnection()) {
+            if (connection != null) {
+                String sql = "DELETE FROM RESIDENT WHERE ID = ? ";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                    preparedStatement.setInt(1, id);
+
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    success = rowsAffected > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return success;
+    }
+
+    public boolean updateUser(String ic, int id, String name, String phone, String pass) {
+        boolean success = false;
+        try (Connection connection = DBConnection.createConnection()) {
+            if (connection != null) {
+                String sql = "UPDATE RESIDENT SET IC=?, NAME = ?, PASSWORD = ?, PHONE = ? WHERE ID=?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                    preparedStatement.setString(1, ic);
+                    preparedStatement.setString(2, name);
+                    preparedStatement.setString(3, pass);
+                    preparedStatement.setString(4, phone);
+                    preparedStatement.setInt(5, id);
+
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    success = rowsAffected > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.print(id);
+        return success;
     }
 
 }

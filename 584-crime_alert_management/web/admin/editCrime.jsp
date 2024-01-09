@@ -35,10 +35,10 @@
 
                         <!-- Page Heading -->
                         <h1 class="h3 mb-4 text-gray-800">Crime Edit</h1>
-                        <form class="user" action="ecrimeController.do" method="POST">
+                        <form class="user" action="eCrime.do" method="POST">
                             <div class="form-group">
                                 <label for="Crime ID">Crime ID:</label>
-                                <input type="text" class="form-control form-control-user" id="residentId" name="residentId" value="<%= obj.getID()%>" readonly>
+                                <input type="text" class="form-control form-control-user" id="id" name="id" value="<%= obj.getID()%>" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="crimeName">Crime Name:</label>
@@ -81,6 +81,10 @@
                             <div class="form-group">
                                 <label for="date">Date:</label>
                                 <input type="date" class="form-control form-control-user" id="date" name="date" value="<%= obj.getTime()%>">
+                            </div>
+                            <div class="form-group">
+                                <label for="status">STATUS:</label>
+                                <input type="text" class="form-control form-control-user" id="status" name="status" value="<%= obj.getStatus()%>">
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-user btn-block">Edit Crime</button>

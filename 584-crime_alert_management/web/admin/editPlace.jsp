@@ -40,7 +40,7 @@
                                 <label for="residentId">Place Name:</label>
                                 <input type="text" class="form-control form-control-user" id="placename" name="placename" value="<%= obj.getPlaceName()%>">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-user btn-block">Register Place</button>
+                            <button type="submit" class="btn btn-primary btn-user btn-block">edit Place</button>
                             <hr>
                         </form>
 

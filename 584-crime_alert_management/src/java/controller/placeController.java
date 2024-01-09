@@ -69,7 +69,7 @@ public class placeController extends HttpServlet {
             place Place = new place(placeId, placename);
             addPlace(Place);
             out.println("Data Successful");
-            response.sendRedirect("placeSubmitServlet.do");
+            response.sendRedirect("placeAdminServlet.do");
         } catch (Exception ex) {
             out.println("Error: " + ex.getMessage());
         } finally {

@@ -161,4 +161,47 @@ public class CrimeDao {
         return crimeRecord;
     }
 
+    public boolean deleteCrime(int ID) {
+        boolean success = false;
+        try (Connection connection = DBConnection.createConnection()) {
+            if (connection != null) {
+                String sql = "DELETE FROM CRIME WHERE ID = ? ";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                    preparedStatement.setInt(1, ID);
+
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    success = rowsAffected > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return success;
+    }
+
+    public boolean updateCrime(int id, int residentId, String crimeName, int crimeId, int placeId, String notes, String date, String status) {
+        boolean success = false;
+        try (Connection connection = DBConnection.createConnection()) {
+            if (connection != null) {
+                String sql = "UPDATE CRIME SET CRIMENAME=?, RESIDENT_ID=?, CRIME_ID=?, PLACE_ID=?, NOTES=?, CRIMEDATE=?, STATUS=? WHERE ID=?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                    preparedStatement.setString(1, crimeName);
+                    preparedStatement.setInt(2, residentId);
+                    preparedStatement.setInt(3, crimeId);
+                    preparedStatement.setInt(4, placeId);
+                    preparedStatement.setString(5, notes);
+                    preparedStatement.setString(6, date);
+                    preparedStatement.setString(7, status);
+                    preparedStatement.setInt(8, id);
+
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    success = rowsAffected > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return success;
+    }
+
 }

@@ -108,4 +108,41 @@ public class placeDao {
 
         return foundplace;
     }
+
+    public boolean deletePlace(int placeId) {
+        boolean success = false;
+        try (Connection connection = DBConnection.createConnection()) {
+            if (connection != null) {
+                String sql = "DELETE FROM PLACE WHERE ID= ? ";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                    preparedStatement.setInt(1, placeId);
+
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    success = rowsAffected > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return success;
+    }
+
+    public boolean updatePlace(int ID, String place) {
+        boolean success = false;
+        try (Connection connection = DBConnection.createConnection()) {
+            if (connection != null) {
+                String sql = "UPDATE PLACE SET PLACENAME=? WHERE ID=?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                    preparedStatement.setString(1, place);
+                    preparedStatement.setInt(2, ID);
+
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    success = rowsAffected > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return success;
+    }
 }

@@ -9,6 +9,10 @@
         <servlet-class>adminServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ePlace</servlet-name>
+        <servlet-class>ePlace</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>AdminController</servlet-name>
         <servlet-class>controller.AdminController</servlet-class>
     </servlet>
@@ -67,6 +71,26 @@
     <servlet>
         <servlet-name>placeAdminServlet</servlet-name>
         <servlet-class>placeAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deletePlace</servlet-name>
+        <servlet-class>deletePlace</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteCrime</servlet-name>
+        <servlet-class>deleteCrime</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteResident</servlet-name>
+        <servlet-class>deleteResident</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eCrime</servlet-name>
+        <servlet-class>eCrime</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eResident</servlet-name>
+        <servlet-class>eResident</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -136,9 +160,35 @@
         <servlet-name>editPlaceServlet</servlet-name>
         <url-pattern>/editPlaceServlet.do</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deletePlace</servlet-name>
+        <url-pattern>/deletePlace.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteCrime</servlet-name>
+        <url-pattern>/deleteCrime.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteResident</servlet-name>
+        <url-pattern>/deleteResident.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eCrime</servlet-name>
+        <url-pattern>/eCrime.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ePlace</servlet-name>
+        <url-pattern>/ePlace.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eResident</servlet-name>
+        <url-pattern>/eResident.do</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
 </web-app>
+
+

@@ -73,7 +73,7 @@
                                                 <td> <input type='text' name='place' readonly value='<%= places.get(i).getPlaceName()%>' > </td>
                                                 <td>
                                                     <input type='submit' class='btn btn-primary flex-row-reverse' value='edit'>
-                                                    <input type='submit' class='btn btn-primary flex-row-reverse' formaction='deleteCrime.do' value='delete'>
+                                                    <input type='submit' class='btn btn-primary flex-row-reverse' formaction='deletePlace.do' value='delete'>
                                                 </td>
                                             </tr>
                                         </form>
